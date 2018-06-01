@@ -6,7 +6,6 @@ services:
     container_name: dev_pledge_cache
     image: redis
 
-
 networks:
   default:
     name: devpledge_cache

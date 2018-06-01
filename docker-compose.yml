@@ -5,6 +5,11 @@ services:
   cache:
     container_name: dev_pledge_cache
     image: redis
+    restart: always
+    volumes:
+      - ./data:/data
+    entrypoint: redis-server --appendonly yes
+
 
 networks:
   default:

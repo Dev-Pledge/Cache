@@ -9,8 +9,16 @@ services:
     volumes:
       - ./data:/data
     entrypoint: redis-server --appendonly yes
+
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+    - REDIS_HOSTS=local:cache:6379
     ports:
-      - 6380:6379
+    - 8081:8081
 
 networks:
   default:
